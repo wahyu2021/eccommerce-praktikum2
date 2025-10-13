@@ -1,61 +1,213 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Proyek E-Commerce - Praktikum 2
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Proyek ini adalah aplikasi E-Commerce sederhana yang dibuat menggunakan Laravel sebagai bagian dari Praktikum 2. Aplikasi ini memiliki fitur dasar CRUD (Create, Read, Update, Delete) untuk manajemen produk.
 
-## About Laravel
+## Prasyarat
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sebelum memulai, pastikan Anda telah menginstal perangkat lunak berikut di komputer Anda:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* PHP 8.2 atau lebih tinggi
+* Composer
+* Node.js & NPM
+* **Git**
+* Database (misalnya: MySQL, PostgreSQL, atau SQLite)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Anda dapat mengatur proyek ini dengan dua cara: menggunakan **Git (direkomendasikan)** atau dengan mengunduh file **ZIP**.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Opsi 1: Menggunakan Git (Direkomendasikan)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone repositori ini ke komputer Anda:**
 
-## Laravel Sponsors
+   ```bash
+   git clone https://github.com/wahyu2021/eccommerce-praktikum2.git
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Masuk ke direktori proyek:**
 
-### Premium Partners
+   ```bash
+   cd ecommerce-praktikum2
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. Lanjutkan ke bagian **Langkah-Langkah Pengaturan** di bawah ini.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Opsi 2: Mengunduh File ZIP
 
-## Code of Conduct
+Jika mengunduh proyek sebagai file ZIP, folder `.git` (yang berisi riwayat versi) tidak akan disertakan.
+Agar bisa berkontribusi (melakukan `push` ke GitHub), Anda perlu menginisialisasi Git secara manual.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Unduh dan Ekstrak File ZIP:**
 
-## Security Vulnerabilities
+   * Buka halaman utama repositori ini di GitHub.
+   * Klik tombol hijau **“<> Code”**, lalu pilih **“Download ZIP”**.
+   * Setelah unduhan selesai, ekstrak file ZIP ke lokasi yang Anda inginkan.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. **Buka Terminal dan Inisialisasi Git:**
 
-## License
+   ```bash
+   cd path/ke/folder/hasil/ekstrak
+   git init -b main
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Hubungkan ke Repositori Asli (Remote):**
+   Ganti `https://github.com/wahyu2021/eccommerce-praktikum2.git` dengan URL yang benar dari proyek ini.
+
+   ```bash
+   git remote add origin https://github.com/wahyu2021/eccommerce-praktikum2.git
+   ```
+
+4. **Lakukan Commit Awal:**
+
+   ```bash
+   git add .
+   git commit -m "Initial commit from ZIP download"
+   ```
+
+Sekarang, folder Anda sudah menjadi repositori Git lokal yang terhubung dengan repositori utama.
+
+---
+
+## Langkah-Langkah Pengaturan
+
+Setelah Anda mendapatkan file proyek (baik melalui `git clone` maupun unduhan ZIP), ikuti langkah-langkah berikut:
+
+1. **Instal dependensi PHP menggunakan Composer:**
+
+   ```bash
+   composer install
+   ```
+
+2. **Instal dependensi JavaScript menggunakan NPM:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Salin file `.env.example` menjadi `.env`:**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Buat kunci aplikasi baru:**
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Konfigurasi koneksi database di file `.env`:**
+
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=laravel
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+6. **Jalankan migrasi database:**
+
+   ```bash
+   php artisan migrate
+   ```
+
+7. **Build aset frontend:**
+
+   ```bash
+   npm run build
+   ```
+
+---
+
+## Menjalankan Aplikasi
+
+Jalankan server pengembangan lokal:
+
+```bash
+php artisan serve
+```
+
+Akses di: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+Atau jalankan semua layanan sekaligus:
+
+```bash
+composer run dev
+```
+
+---
+
+## Cara Berkontribusi
+
+Kami sangat senang menerima kontribusi dari siapa pun.
+Ikuti langkah berikut tergantung cara Anda mendapatkan proyek ini.
+
+### 🔹 Jika Anda Menggunakan Git Clone
+
+1. **Selalu `pull` terlebih dahulu:**
+
+   ```bash
+   git pull origin main
+   ```
+2. **Buat branch baru untuk perubahan Anda:**
+
+   ```bash
+   git checkout -b nama-fitur-atau-perbaikan
+   ```
+3. **Lakukan perubahan dan commit:**
+
+   ```bash
+   git commit -m "feat: menambahkan fitur X"
+   ```
+4. **Push ke repository:**
+
+   ```bash
+   git push origin nama-fitur-atau-perbaikan
+   ```
+5. **Buat Pull Request di GitHub.**
+
+---
+
+### 🔹 Jika Anda Mengunduh Lewat ZIP
+
+Jika mengunduh proyek ini dalam bentuk ZIP, **pastikan langkah-langkah berikut dilakukan sebelum berkontribusi:**
+
+1. Inisialisasi Git di folder hasil ekstrak:
+
+   ```bash
+   git init -b main
+   ```
+2. Hubungkan ke repositori utama:
+
+   ```bash
+   git remote add origin https://github.com/wahyu2021/eccommerce-praktikum2.git
+   ```
+3. Tambahkan dan commit perubahan awal:
+
+   ```bash
+   git add .
+   git commit -m "Initial commit from ZIP download"
+   ```
+4. Buat branch untuk kontribusi:
+
+   ```bash
+   git checkout -b nama-fitur-atau-perbaikan
+   ```
+5. Setelah melakukan perubahan:
+
+   ```bash
+   git add .
+   git commit -m "feat: perbaikan fitur X"
+   git push origin nama-fitur-atau-perbaikan
+   ```
+6. Buat **Pull Request** ke branch `main` dari repositori utama.
+
+---
+
+Terima kasih telah berkontribusi dan mendukung proyek ini! 🎉
