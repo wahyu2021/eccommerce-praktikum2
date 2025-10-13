@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function() {
-    return redirect()->route('products.index');
+    return 'Hello, World!';
 });
 
 Route::prefix('products')->name('products.')->group(function () {
@@ -15,3 +15,4 @@ Route::prefix('products')->name('products.')->group(function () {
     Route::put('/{product}', [ProductController::class, 'update'])->name('update');
     Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy');
 });
+
