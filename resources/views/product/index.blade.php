@@ -3,7 +3,7 @@
 <div class="card shadow-sm">
     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
         <h5 class="mb-0">📦 Daftar Produk</h5>
-        <a href="/" class="btn btn-success">Tambah Produk</a>
+        <a href={{ route('products.create') }} class="btn btn-success">Tambah Produk</a>
     </div>
     <div class="card-body bg-white">
         @if (session('success'))
