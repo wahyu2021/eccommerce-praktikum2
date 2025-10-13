@@ -12,7 +12,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        @if ($products->isEmpty())
+        @if ($products->isEmpty() )
             <div class="alert alert-warning text-center"> Tidak ada produk tersedia.</div>
         @else
             <table class="table table-striped table-hover align-middle">
@@ -53,34 +53,34 @@
                 {{ $products->onEachSide(1)->links('pagination::bootstrap-5', ['class' => 'pagination-sm']) }}
             </div>
 
+            <div class="modal fade" id="modalHapus" tabindex="-1" aria-labelledby="modalHapusLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+        
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalHapusLabel">Konfirmasi Penghapusan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+        
+                        <div class="modal-body">
+                            Apakah Anda yakin ingin menghapus item ini? Tindakan ini tidak dapat dibatalkan.
+                        </div>
+        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <form action="{{ route('products.destroy', $p->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                            </form>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 
-    <div class="modal fade" id="modalHapus" tabindex="-1" aria-labelledby="modalHapusLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalHapusLabel">Konfirmasi Penghapusan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    Apakah Anda yakin ingin menghapus item ini? Tindakan ini tidak dapat dibatalkan.
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <form action="{{ route('products.destroy', $p->id) }}" method="POST" class="d-inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Ya, Hapus</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
 </div>
 @endsection
