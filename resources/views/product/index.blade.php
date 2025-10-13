@@ -21,7 +21,7 @@
                         <th class="text-center" width="50">ID</th>
                         <th>Nama Produk</th>
                         <th>Kategori</th>
-                        <th class="text-end">Harga</th>
+                        <th class="text-start">Harga</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -31,10 +31,9 @@
                             <td class="text-center">{{ $p->id }}</td>
                             <td>{{ $p->nama }}</td>
                             <td>
-
-                                <span class="badge bg-info text-dark">{{ $p->kategori }}</span>
+                                {{ $p->kategori }}
                             </td>
-                            <td class="text-end">Rp {{ number_format($p->harga, 0, ',', '.') }}</td>
+                            <td class="text-start">Rp {{ number_format($p->harga, 0, ',', '.') }}</td>
                             <td class="text-center">
                                 <a href={{ route('products.edit', $p->id) }} class="btn btn-warning">Edit</a>
 
