@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class ProductController extends Controller
@@ -53,8 +54,17 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product)
-{
+    {
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus!');
+    }
+
+    public function showCategory()
+    {
+        $categories = DB::table('products')
+            ->select('kategori', DB::raw('COUNT(*) as total'))
+            ->groupBy('kategori')->get();
+
+        return view('product.categories', compact('categories'));
     }
 }
